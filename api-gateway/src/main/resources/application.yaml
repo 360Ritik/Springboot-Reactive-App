@@ -29,9 +29,6 @@ spring:
             predicates:
               - Path=/department/**
 
-  main:
-    allow-bean-definition-overriding: true
-
 
 okta:
   oauth2:

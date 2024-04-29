@@ -20,19 +20,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class OktaOAuth2WebSecurity {
 
     @Bean
-    public OAuth2AuthorizedClientManager manager(
-            ClientRegistrationRepository clientRegistrationRepository,
-            OAuth2AuthorizedClientRepository auth2AuthorizedClientRepository
-    ) {
-        OAuth2AuthorizedClientProvider provider = OAuth2AuthorizedClientProviderBuilder.builder().clientCredentials().build();
-        DefaultOAuth2AuthorizedClientManager defaultOAuth2AuthorizedClientManager = new DefaultOAuth2AuthorizedClientManager(clientRegistrationRepository, auth2AuthorizedClientRepository);
-        defaultOAuth2AuthorizedClientManager.setAuthorizedClientProvider(provider);
-        return defaultOAuth2AuthorizedClientManager;
-
-
-    }
-
-    @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
                 .authorizeExchange(exchanges -> exchanges
