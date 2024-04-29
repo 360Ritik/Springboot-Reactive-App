@@ -29,21 +29,6 @@ spring:
             predicates:
               - Path=/department/**
 
-
-
-  security:
-    oauth2:
-      resource-server:
-        jwt:
-          issuer-uri: https://dev-16235276.okta.com/oauth2/default
-      client:
-        registration:
-          internal-client:
-            provider: okta
-            authorization-grant-type: client_credentials
-            scope: openid, profile, email, offline_access
-            client-id: 0oagp6pjv1sYxCEvk5d7
-            client-secret: bT1k0EG10HWvwCaG9auTxzALcQoA1wCzNaUQU3EgDqDiNru3VmXjJg2lx6J3fJrd
   main:
     allow-bean-definition-overriding: true
 
