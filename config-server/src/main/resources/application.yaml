@@ -6,11 +6,16 @@ spring:
   profiles:
     active: native
 
-  application:
-     name: CONFIG-SERVER
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/EtienneBel/spring-config-server
-          clone-on-start: true
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka }
+
+okta:
+  oauth2:
+    issuer: https://dev-16235276.okta.com/oauth2/default
+    audience: api://default
