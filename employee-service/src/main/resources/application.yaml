@@ -6,3 +6,7 @@ spring:
 
 
 
+okta:
+  oauth2:
+    issuer: https://dev-16235276.okta.com/oauth2/default
+    audience: api://default

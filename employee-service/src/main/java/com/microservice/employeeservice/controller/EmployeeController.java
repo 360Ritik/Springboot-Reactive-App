@@ -5,6 +5,7 @@ import com.microservice.employeeservice.repository.EmployeeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class EmployeeController {
     EmployeeRepository repository;
 
     @PostMapping
+    @PreAuthorize("hasAuthority('Admin')")
     public Employee add(@RequestBody Employee employee) {
         LOGGER.info("Employee add: {}", employee);
         return repository.add(employee);
